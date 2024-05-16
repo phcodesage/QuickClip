@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Video Downloader</h1>
+            <nav>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Home</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">About</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Download your favorite videos</h2>
+            <form id="downloadForm">
+                <div class="mb-4">
+                    <label for="url" class="block text-sm font-medium">Video URL:</label>
+                    <input type="text" id="url" name="url" required
+                        class="mt-1 p-2 w-full bg-gray-700 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div class="mb-4">
+                    <label for="format" class="block text-sm font-medium">Format:</label>
+                    <select id="format" name="format"
+                        class="mt-1 p-2 w-full bg-gray-700 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <option value="mp4">MP4</option>
+                        <option value="mp3">MP3</option>
+                    </select>
+                </div>
+                <div class="mb-4" id="resolutionSection">
+                    <label for="resolution" class="block text-sm font-medium">Resolution:</label>
+                    <button type="button" id="resolutionButton"
+                        class="mt-1 p-2 w-full bg-gray-700 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        Select Resolution
+                    </button>
+                    <div id="resolutionMenu" class="hidden mt-2 bg-gray-700 border border-gray-600 rounded-lg">
+                        <button type="button" class="block w-full text-left px-4 py-2 hover:bg-gray-600">1080p</button>
+                        <button type="button" class="block w-full text-left px-4 py-2 hover:bg-gray-600">720p</button>
+                        <button type="button" class="block w-full text-left px-4 py-2 hover:bg-gray-600">480p</button>
+                        <button type="button" class="block w-full text-left px-4 py-2 hover:bg-gray-600">360p</button>
+                    </div>
+                </div>
+                <button type="button" id="downloadButton" disabled
+                    class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">Download</button>
+            </form>
+            <div id="progress" class="mt-4"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Video Downloader. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    </body>
+    </html>
